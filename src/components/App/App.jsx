@@ -9,20 +9,36 @@ export default function App() {
     neutral: 0,
     bad: 0
   });
-  const updateFeedback = (feedbackType) => {
+  // const updateFeedback = (feedbackType) => {
+  //   setValues(prevValues => ({
+  //    ...prevValues,
+  //     [feedbackType]: prevValues[feedbackType] + 1
+  //   }));
+  // };
+  const handleButtonClick = (feedbackType) => {
     setValues(prevValues => ({
-     ...prevValues,
-      [feedbackType]: prevValues[feedbackType] + 1
+       ...prevValues,
+        [feedbackType]: prevValues[feedbackType] + 1
     }));
-  };
+};
+
+const resetFeedbacks = () => {
+    resetValues({
+        good: 0,
+        neutral: 0,
+        bad: 0
+    });
+};
   const totalFeedback = values.good + values.neutral + values.bad;
 
   const positiveFeedbacks = totalFeedback > 0? Math.round((values.good / totalFeedback) * 100):0;
 
+
+  
   return (
     <>
      <Description />
-     <Options setValues={updateFeedback} />
+     <Options setValues={handleButtonClick} resetValues={resetFeedbacks}/>
      <Feedback values={values} totalFeedback={totalFeedback} positiveFeedbacks={positiveFeedbacks} />
      
     </>
