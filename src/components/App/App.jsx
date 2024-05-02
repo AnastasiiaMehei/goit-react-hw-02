@@ -9,12 +9,15 @@ export default function App() {
     neutral: 0,
     bad: 0
   });
+  const totalFeedback = values.good + values.neutral + values.bad;
+
+  const positiveFeedbacks = totalFeedback > 0? Math.round((values.good / totalFeedback) * 100):0
 
   return (
     <>
      <Description />
      <Options values={values} />
-     <Feedback updateFeedback={setValues} />
+     <Feedback updateFeedback={setValues} positiveFeedbacks={positiveFeedbacks} />
      
     </>
   )

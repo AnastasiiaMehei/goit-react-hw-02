@@ -1,7 +1,7 @@
 // import { useState } from 'react'
-import {setValues} from '../App/App'
+// import {setValues} from '../App/App'
 import css from './Options.module.css'
-    const Options = ({updateFeedback}) => {
+    const Options = ({updateFeedback, setValues}) => {
         const handleButtonClick = (values) => {
             updateFeedback(prevState => ({
              ...prevState,

@@ -1,8 +1,7 @@
 
 import css from './Feedback.module.css'
 // import App from '../App/App'
-export default function Feedback({good, neutral, bad}){
-    const totalFeedback = good + neutral + bad;
+export default function Feedback({good, neutral, bad, totalFeedback}){
 
     return(
         <div className={css.div}>
