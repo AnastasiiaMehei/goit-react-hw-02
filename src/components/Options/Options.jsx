@@ -2,12 +2,7 @@
 // import {setValues} from '../App/App'
 import css from './Options.module.css'
     const Options = ({handleButtonClick, resetFeedbacks}) => {
-        // const handleButtonClick = (feedbackType) => {
-        //     props.setValue(feedbackType);
-        //  }
-        //   const resetFeedbacks = () => {
-        //     setValues([]);
-        //   };
+
     return (
         <div>
             <button className={css.button} onClick={() => handleButtonClick('good')}>Good</button>            
