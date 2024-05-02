@@ -1,13 +1,10 @@
 // import { useState } from 'react'
 // import {setValues} from '../App/App'
 import css from './Options.module.css'
-    const Options = ({updateFeedback, setValues}) => {
-        const handleButtonClick = (values) => {
-            updateFeedback(prevState => ({
-             ...prevState,
-              [values]: prevState[values] + 1
-            }));
-          };
+    const Options = ({props, setValues}) => {
+        const handleButtonClick = (feedbackType) => {
+            props.setValue(feedbackType);
+         }
           const resetFeedbacks = () => {
             setValues([]);
           };

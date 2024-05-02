@@ -9,6 +9,12 @@ export default function App() {
     neutral: 0,
     bad: 0
   });
+  const updateFeedback = (feedbackType) => {
+    setValues(prevValues => ({
+     ...prevValues,
+      [feedbackType]: prevValues[feedbackType] + 1
+    }));
+  };
   const totalFeedback = values.good + values.neutral + values.bad;
 
   const positiveFeedbacks = totalFeedback > 0? Math.round((values.good / totalFeedback) * 100):0;
@@ -16,8 +22,8 @@ export default function App() {
   return (
     <>
      <Description />
-     <Options values={values} />
-     <Feedback updateFeedback={setValues} positiveFeedbacks={positiveFeedbacks} />
+     <Options setValues={updateFeedback} />
+     <Feedback values={values} totalFeedback={totalFeedback} positiveFeedbacks={positiveFeedbacks} />
      
     </>
   )
