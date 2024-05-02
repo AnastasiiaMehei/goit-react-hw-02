@@ -11,7 +11,7 @@ export default function App() {
   });
   const totalFeedback = values.good + values.neutral + values.bad;
 
-  const positiveFeedbacks = totalFeedback > 0? Math.round((values.good / totalFeedback) * 100):0
+  const positiveFeedbacks = totalFeedback > 0? Math.round((values.good / totalFeedback) * 100):0;
 
   return (
     <>
