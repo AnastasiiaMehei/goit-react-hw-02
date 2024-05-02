@@ -23,7 +23,7 @@ export default function App() {
 };
 
 const resetFeedbacks = () => {
-    resetValues({
+  setValues({
         good: 0,
         neutral: 0,
         bad: 0
