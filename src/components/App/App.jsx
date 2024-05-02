@@ -17,19 +17,18 @@ export default function App() {
     }));
 };
 const resetFeedback = () => {
-  const resetValues = {
+  setValues({
     good: 0,
     neutral: 0,
     bad: 0
-  };
-  setValues(resetValues);
+  });
 }
   const totalFeedback = values.good + values.neutral + values.bad;
   const positiveFeedbacks = totalFeedback > 0? Math.round((values.good / totalFeedback) * 100):0; 
   return (
     <>
      <Description />
-     <Options updateFeedback={updateFeedback} resetFeedbacks={resetFeedback}/>
+     <Options setValues={updateFeedback} resetFeedbacks={resetFeedback}/>
      <Feedback values={values} totalFeedback={totalFeedback} positiveFeedbacks={positiveFeedbacks} />
      <Notification/>
      
