@@ -10,7 +10,7 @@ export default function App() {
     neutral: 0,
     bad: 0
   });
-  const handleButtonClick = (feedbackType) => {
+  const updateFeedback = (feedbackType) => {
     setValues(prevValues => ({
        ...prevValues,
         [feedbackType]: prevValues[feedbackType] + 1
@@ -28,7 +28,7 @@ const resetFeedbacks = () => {
   return (
     <>
      <Description />
-     <Options setValues={handleButtonClick} resetFeedbacks={resetFeedbacks}/>
+     <Options setValues={updateFeedback} resetFeedbacks={resetFeedbacks}/>
      <Feedback values={values} totalFeedback={totalFeedback} positiveFeedbacks={positiveFeedbacks} />
      <Notification/>
      
