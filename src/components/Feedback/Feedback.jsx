@@ -15,5 +15,4 @@ export default function Feedback({values, totalFeedback, positiveFeedbacks}){
                 <Notification/>
             )}
         </div>
-    );
-}
+    );}
