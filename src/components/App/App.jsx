@@ -17,7 +17,7 @@ return {
 };
 }  );
   useEffect(() => {
-    window.localStorage.setItem("saved-values", JSON.stringify({values}));
+    window.localStorage.setItem("saved-values", JSON.stringify(values));
   }, [values]); 
   
   const updateFeedback = (feedbackType) => {
