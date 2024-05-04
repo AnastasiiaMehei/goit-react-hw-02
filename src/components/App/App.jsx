@@ -39,10 +39,8 @@ const resetFeedbacks = () => {
   return (
     <>
      <Description />
-     <Options setValues={updateFeedback} resetFeedbacks={resetFeedbacks} />
-     <Feedback values={values} totalFeedback={totalFeedback} positiveFeedbacks={positiveFeedbacks} />
-     <Notification/>
-     
+     <Options setValues={updateFeedback} resetFeedbacks={resetFeedbacks} totalFeedback={totalFeedback}/>
+     { totalFeedback > 0? <Feedback values={values} totalFeedback={totalFeedback} positiveFeedbacks={positiveFeedbacks}/>:<Notification/>}
     </>
   )
 }
